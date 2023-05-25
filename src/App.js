@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+
+import Loading from "./components/Loading";
+import Notification from "./components/Notification";
+import routes from "./routes";
+import history from "./history";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const logged = true;
+  const loading = false;
+  return loading ? <Loading /> : routes(logged);
 }
 
-export default App;
+const AppWrapper = () => {
+  return (
+    <BrowserRouter history={history}>
+      <Notification />
+      <App />
+    </BrowserRouter>
+  );
+};
+
+export default AppWrapper;
