@@ -2,29 +2,26 @@ import http from "../../config";
 
 class TimeslotServices {
 
-  hello() {
-    return http.get("/timeslots/hello");
-  }
-
-  getAll() {
+  getAllTimeslots() {
     return http.get("/timeslots");
   }
   
-  getById(id) {
+  getTimeslotById(id) {
     return http.get(`/timeslots/${id}`);
   }
 
-  create(data) {
+  createTimeslot(data) {
     return http.post(`/timeslots`, data);
   }
 
-  update(id, data) {
+  updateTimeslot(id, data) {
     return http.put(`/timeslots/${id}`, data);
   }
 
-  delete(id) {
+  deleteTimeslot(id) {
     return http.delete(`/timeslots/${id}`);
   }
 }
 
-export default new TimeslotServices();
+const timeslotServices = new TimeslotServices();
+export default timeslotServices;

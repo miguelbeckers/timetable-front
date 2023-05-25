@@ -30,7 +30,7 @@ const lessonReducer = (state = defaultState, action) => {
                 list: {
                     ...state.list,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case lessonConstants.GET_LESSON_LIST_SUCCESS:
@@ -40,7 +40,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.list,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Lessons loaded", type: messageConstants.INFO }
+                    message: {content: "Lessons loaded", type: messageConstants.INFO}
                 }
             };
         case lessonConstants.GET_LESSON_LOADING:
@@ -57,7 +57,7 @@ const lessonReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case lessonConstants.GET_LESSON_SUCCESS:
@@ -67,7 +67,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Lesson loaded", type: messageConstants.INFO }
+                    message: {content: "Lesson loaded", type: messageConstants.INFO}
                 }
             };
         case lessonConstants.CREATE_LESSON_LOADING:
@@ -84,7 +84,7 @@ const lessonReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case lessonConstants.CREATE_LESSON_SUCCESS:
@@ -94,7 +94,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Lesson created", type: messageConstants.SUCCESS }
+                    message: {content: "Lesson created", type: messageConstants.SUCCESS}
                 }
             };
         case lessonConstants.UPDATE_LESSON_LOADING:
@@ -111,7 +111,7 @@ const lessonReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case lessonConstants.UPDATE_LESSON_SUCCESS:
@@ -121,7 +121,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Lesson updated", type: messageConstants.SUCCESS }
+                    message: {content: "Lesson updated", type: messageConstants.SUCCESS}
                 }
             };
         case lessonConstants.DELETE_LESSON_LOADING:
@@ -138,7 +138,7 @@ const lessonReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case lessonConstants.DELETE_LESSON_SUCCESS:
@@ -148,23 +148,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: { content: "Lesson deleted", type: messageConstants.SUCCESS }
-                }
-            };
-        case lessonConstants.CLEAR_LESSON_MESSAGE:
-            return {
-                ...state,
-                current: {
-                    ...state.current,
-                    message: {}
-                }
-            };
-        case lessonConstants.CLEAR_LESSON_LIST_MESSAGE:
-            return {
-                ...state,
-                list: {
-                    ...state.list,
-                    message: {}
+                    message: {content: "Lesson deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:

@@ -2,29 +2,26 @@ import http from "../../config";
 
 class RoomServices {
 
-  hello() {
-    return http.get("/rooms/hello");
-  }
-
-  getAll() {
+  getAllRooms() {
     return http.get("/rooms");
   }
   
-  getById(id) {
+  getRoomById(id) {
     return http.get(`/rooms/${id}`);
   }
 
-  create(data) {
+  createRoom(data) {
     return http.post(`/rooms`, data);
   }
 
-  update(id, data) {
+  updateRoom(id, data) {
     return http.put(`/rooms/${id}`, data);
   }
 
-  delete(id) {
+  deleteRoom(id) {
     return http.delete(`/rooms/${id}`);
   }
 }
 
-export default new RoomServices();
+const roomServices = new RoomServices();
+export default roomServices;

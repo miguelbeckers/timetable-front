@@ -2,29 +2,26 @@ import http from "../../config";
 
 class LessonServices {
 
-  hello() {
-    return http.get("/lessons/hello");
-  }
-
-  getAll() {
+  getAllLessons() {
     return http.get("/lessons");
   }
   
-  getById(id) {
+  getLessonById(id) {
     return http.get(`/lessons/${id}`);
   }
 
-  create(data) {
+  createLesson(data) {
     return http.post(`/lessons`, data);
   }
 
-  update(id, data) {
+  updateLesson(id, data) {
     return http.put(`/lessons/${id}`, data);
   }
 
-  delete(id) {
+  deleteLesson(id) {
     return http.delete(`/lessons/${id}`);
   }
 }
 
-export default new LessonServices();
+const lessonServices = new LessonServices();
+export default lessonServices;

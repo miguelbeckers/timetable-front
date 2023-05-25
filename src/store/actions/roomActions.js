@@ -1,13 +1,13 @@
 import roomServices from "../services/roomServices";
 import roomConstants from "../constants/roomConstants";
 
-export const getAll = () => async dispatch => {
+export const getAllRooms = () => async dispatch => {
     try {
         dispatch({
             type: roomConstants.GET_ROOM_LIST_LOADING
         });
 
-        const res = await roomServices.getAll();
+        const res = await roomServices.getAllRooms();
 
         dispatch({
             type: roomConstants.GET_ROOM_LIST_SUCCESS,
@@ -21,13 +21,13 @@ export const getAll = () => async dispatch => {
     }
 };
 
-export const getById = (id) => async dispatch => {
+export const getRoomById = (id) => async dispatch => {
     try {
         dispatch({
             type: roomConstants.GET_ROOM_LOADING
         });
 
-        const res = await roomServices.getById(id);
+        const res = await roomServices.getRoomById(id);
 
         dispatch({
             type: roomConstants.GET_ROOM_SUCCESS,
@@ -41,13 +41,13 @@ export const getById = (id) => async dispatch => {
     }
 };
 
-export const create = (data) => async dispatch => {
+export const createRoom = (data) => async dispatch => {
     try {
         dispatch({
             type: roomConstants.CREATE_ROOM_LOADING
         });
 
-        const res = await roomServices.create(data);
+        const res = await roomServices.createRoom(data);
 
         dispatch({
             type: roomConstants.CREATE_ROOM_SUCCESS,
@@ -61,13 +61,13 @@ export const create = (data) => async dispatch => {
     }
 };
 
-export const update = (id, data) => async dispatch => {
+export const updateRoom = (id, data) => async dispatch => {
     try {
         dispatch({
             type: roomConstants.UPDATE_ROOM_LOADING
         });
 
-        const res = await roomServices.update(id, data);
+        const res = await roomServices.updateRoom(id, data);
 
         dispatch({
             type: roomConstants.UPDATE_ROOM_SUCCESS,
@@ -81,13 +81,13 @@ export const update = (id, data) => async dispatch => {
     }
 };
 
-export const _delete = (id) => async dispatch => {
+export const deleteRoom = (id) => async dispatch => {
     try {
         dispatch({
             type: roomConstants.DELETE_ROOM_LOADING
         });
 
-        const res = await roomServices.delete(id);
+        const res = await roomServices.deleteRoom(id);
 
         dispatch({
             type: roomConstants.DELETE_ROOM_SUCCESS,

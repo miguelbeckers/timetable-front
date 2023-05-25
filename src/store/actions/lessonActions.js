@@ -1,13 +1,13 @@
 import lessonServices from "../services/lessonServices";
 import lessonConstants from "../constants/lessonConstants";
 
-export const getAll = () => async dispatch => {
+export const getAllLessons = () => async dispatch => {
     try {
         dispatch({
             type: lessonConstants.GET_LESSON_LIST_LOADING
         });
 
-        const res = await lessonServices.getAll();
+        const res = await lessonServices.getAllLessons();
 
         dispatch({
             type: lessonConstants.GET_LESSON_LIST_SUCCESS,
@@ -21,13 +21,13 @@ export const getAll = () => async dispatch => {
     }
 };
 
-export const getById = (id) => async dispatch => {
+export const getLessonById = (id) => async dispatch => {
     try {
         dispatch({
             type: lessonConstants.GET_LESSON_LOADING
         });
 
-        const res = await lessonServices.getById(id);
+        const res = await lessonServices.getLessonById(id);
 
         dispatch({
             type: lessonConstants.GET_LESSON_SUCCESS,
@@ -41,13 +41,13 @@ export const getById = (id) => async dispatch => {
     }
 };
 
-export const create = (data) => async dispatch => {
+export const createLesson = (data) => async dispatch => {
     try {
         dispatch({
             type: lessonConstants.CREATE_LESSON_LOADING
         });
 
-        const res = await lessonServices.create(data);
+        const res = await lessonServices.createLesson(data);
 
         dispatch({
             type: lessonConstants.CREATE_LESSON_SUCCESS,
@@ -61,13 +61,13 @@ export const create = (data) => async dispatch => {
     }
 };
 
-export const update = (id, data) => async dispatch => {
+export const updateLesson = (id, data) => async dispatch => {
     try {
         dispatch({
             type: lessonConstants.UPDATE_LESSON_LOADING
         });
 
-        const res = await lessonServices.update(id, data);
+        const res = await lessonServices.updateLesson(id, data);
 
         dispatch({
             type: lessonConstants.UPDATE_LESSON_SUCCESS,
@@ -81,13 +81,13 @@ export const update = (id, data) => async dispatch => {
     }
 };
 
-export const _delete = (id) => async dispatch => {
+export const deleteLesson = (id) => async dispatch => {
     try {
         dispatch({
             type: lessonConstants.DELETE_LESSON_LOADING
         });
 
-        const res = await lessonServices.delete(id);
+        const res = await lessonServices.deleteLesson(id);
 
         dispatch({
             type: lessonConstants.DELETE_LESSON_SUCCESS,

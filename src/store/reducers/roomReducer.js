@@ -30,7 +30,7 @@ const roomReducer = (state = defaultState, action) => {
                 list: {
                     ...state.list,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case roomConstants.GET_ROOM_LIST_SUCCESS:
@@ -40,7 +40,7 @@ const roomReducer = (state = defaultState, action) => {
                     ...state.list,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Rooms loaded", type: messageConstants.INFO }
+                    message: {content: "Rooms loaded", type: messageConstants.INFO}
                 }
             };
         case roomConstants.GET_ROOM_LOADING:
@@ -57,7 +57,7 @@ const roomReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case roomConstants.GET_ROOM_SUCCESS:
@@ -67,7 +67,7 @@ const roomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Room loaded", type: messageConstants.INFO }
+                    message: {content: "Room loaded", type: messageConstants.INFO}
                 }
             };
         case roomConstants.CREATE_ROOM_LOADING:
@@ -84,7 +84,7 @@ const roomReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case roomConstants.CREATE_ROOM_SUCCESS:
@@ -94,7 +94,7 @@ const roomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Room created", type: messageConstants.SUCCESS }
+                    message: {content: "Room created", type: messageConstants.SUCCESS}
                 }
             };
         case roomConstants.UPDATE_ROOM_LOADING:
@@ -111,7 +111,7 @@ const roomReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case roomConstants.UPDATE_ROOM_SUCCESS:
@@ -121,7 +121,7 @@ const roomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Room updated", type: messageConstants.SUCCESS }
+                    message: {content: "Room updated", type: messageConstants.SUCCESS}
                 }
             };
         case roomConstants.DELETE_ROOM_LOADING:
@@ -138,7 +138,7 @@ const roomReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case roomConstants.DELETE_ROOM_SUCCESS:
@@ -148,23 +148,7 @@ const roomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: { content: "Room deleted", type: messageConstants.SUCCESS }
-                }
-            };
-        case roomConstants.CLEAR_ROOM_MESSAGE:
-            return {
-                ...state,
-                current: {
-                    ...state.current,
-                    message: {}
-                }
-            };
-        case roomConstants.CLEAR_ROOM_LIST_MESSAGE:
-            return {
-                ...state,
-                list: {
-                    ...state.list,
-                    message: {}
+                    message: {content: "Room deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:

@@ -2,29 +2,26 @@ import http from "../../config";
 
 class TimetableServices {
 
-  hello() {
-    return http.get("/timetables/hello");
-  }
-
-  getAll() {
+  getAllTimetables() {
     return http.get("/timetables");
   }
   
-  getById(id) {
+  getTimetableById(id) {
     return http.get(`/timetables/${id}`);
   }
 
-  create(data) {
+  createTimetable(data) {
     return http.post(`/timetables`, data);
   }
 
-  update(id, data) {
+  updateTimetable(id, data) {
     return http.put(`/timetables/${id}`, data);
   }
 
-  delete(id) {
+  deleteTimetable(id) {
     return http.delete(`/timetables/${id}`);
   }
 }
 
-export default new TimetableServices();
+const timetableServices = new TimetableServices();
+export default timetableServices;

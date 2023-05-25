@@ -1,13 +1,13 @@
 import timeslotServices from "../services/timeslotServices";
 import timeslotConstants from "../constants/timeslotConstants";
 
-export const getAll = () => async dispatch => {
+export const getAllTimeslots = () => async dispatch => {
     try {
         dispatch({
             type: timeslotConstants.GET_TIMESLOT_LIST_LOADING
         });
 
-        const res = await timeslotServices.getAll();
+        const res = await timeslotServices.getAllTimeslots();
 
         dispatch({
             type: timeslotConstants.GET_TIMESLOT_LIST_SUCCESS,
@@ -21,13 +21,13 @@ export const getAll = () => async dispatch => {
     }
 };
 
-export const getById = (id) => async dispatch => {
+export const getTimeslotById = (id) => async dispatch => {
     try {
         dispatch({
             type: timeslotConstants.GET_TIMESLOT_LOADING
         });
 
-        const res = await timeslotServices.getById(id);
+        const res = await timeslotServices.getTimeslotById(id);
 
         dispatch({
             type: timeslotConstants.GET_TIMESLOT_SUCCESS,
@@ -41,13 +41,13 @@ export const getById = (id) => async dispatch => {
     }
 };
 
-export const create = (data) => async dispatch => {
+export const createTimeslot = (data) => async dispatch => {
     try {
         dispatch({
             type: timeslotConstants.CREATE_TIMESLOT_LOADING
         });
 
-        const res = await timeslotServices.create(data);
+        const res = await timeslotServices.createTimeslot(data);
 
         dispatch({
             type: timeslotConstants.CREATE_TIMESLOT_SUCCESS,
@@ -61,13 +61,13 @@ export const create = (data) => async dispatch => {
     }
 };
 
-export const update = (id, data) => async dispatch => {
+export const updateTimeslot = (id, data) => async dispatch => {
     try {
         dispatch({
             type: timeslotConstants.UPDATE_TIMESLOT_LOADING
         });
 
-        const res = await timeslotServices.update(id, data);
+        const res = await timeslotServices.updateTimeslot(id, data);
 
         dispatch({
             type: timeslotConstants.UPDATE_TIMESLOT_SUCCESS,
@@ -81,13 +81,13 @@ export const update = (id, data) => async dispatch => {
     }
 };
 
-export const _delete = (id) => async dispatch => {
+export const deleteTimeslot = (id) => async dispatch => {
     try {
         dispatch({
             type: timeslotConstants.DELETE_TIMESLOT_LOADING
         });
 
-        const res = await timeslotServices.delete(id);
+        const res = await timeslotServices.deleteTimeslot(id);
 
         dispatch({
             type: timeslotConstants.DELETE_TIMESLOT_SUCCESS,

@@ -1,13 +1,13 @@
 import timetableServices from "../services/timetableServices";
 import timetableConstants from "../constants/timetableConstants";
 
-export const getAll = () => async dispatch => {
+export const getAllTimetables = () => async dispatch => {
     try {
         dispatch({
             type: timetableConstants.GET_TIMETABLE_LIST_LOADING
         });
 
-        const res = await timetableServices.getAll();
+        const res = await timetableServices.getAllTimetables();
 
         dispatch({
             type: timetableConstants.GET_TIMETABLE_LIST_SUCCESS,
@@ -21,13 +21,13 @@ export const getAll = () => async dispatch => {
     }
 };
 
-export const getById = (id) => async dispatch => {
+export const getTimetableById = (id) => async dispatch => {
     try {
         dispatch({
             type: timetableConstants.GET_TIMETABLE_LOADING
         });
 
-        const res = await timetableServices.getById(id);
+        const res = await timetableServices.getTimetableById(id);
 
         dispatch({
             type: timetableConstants.GET_TIMETABLE_SUCCESS,
@@ -41,13 +41,13 @@ export const getById = (id) => async dispatch => {
     }
 };
 
-export const create = (data) => async dispatch => {
+export const createTimetable = (data) => async dispatch => {
     try {
         dispatch({
             type: timetableConstants.CREATE_TIMETABLE_LOADING
         });
 
-        const res = await timetableServices.create(data);
+        const res = await timetableServices.createTimetable(data);
 
         dispatch({
             type: timetableConstants.CREATE_TIMETABLE_SUCCESS,
@@ -61,13 +61,13 @@ export const create = (data) => async dispatch => {
     }
 };
 
-export const update = (id, data) => async dispatch => {
+export const updateTimetable = (id, data) => async dispatch => {
     try {
         dispatch({
             type: timetableConstants.UPDATE_TIMETABLE_LOADING
         });
 
-        const res = await timetableServices.update(id, data);
+        const res = await timetableServices.updateTimetable(id, data);
 
         dispatch({
             type: timetableConstants.UPDATE_TIMETABLE_SUCCESS,
@@ -81,13 +81,13 @@ export const update = (id, data) => async dispatch => {
     }
 };
 
-export const _delete = (id) => async dispatch => {
+export const deleteTimetable = (id) => async dispatch => {
     try {
         dispatch({
             type: timetableConstants.DELETE_TIMETABLE_LOADING
         });
 
-        const res = await timetableServices.delete(id);
+        const res = await timetableServices.deleteTimetable(id);
 
         dispatch({
             type: timetableConstants.DELETE_TIMETABLE_SUCCESS,

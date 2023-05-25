@@ -30,7 +30,7 @@ const timetableReducer = (state = defaultState, action) => {
                 list: {
                     ...state.list,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case timetableConstants.GET_TIMETABLE_LIST_SUCCESS:
@@ -40,7 +40,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.list,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Timetables loaded", type: messageConstants.INFO }
+                    message: {content: "Timetables loaded", type: messageConstants.INFO}
                 }
             };
         case timetableConstants.GET_TIMETABLE_LOADING:
@@ -57,7 +57,7 @@ const timetableReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case timetableConstants.GET_TIMETABLE_SUCCESS:
@@ -67,7 +67,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Timetable loaded", type: messageConstants.INFO }
+                    message: {content: "Timetable loaded", type: messageConstants.INFO}
                 }
             };
         case timetableConstants.CREATE_TIMETABLE_LOADING:
@@ -84,7 +84,7 @@ const timetableReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case timetableConstants.CREATE_TIMETABLE_SUCCESS:
@@ -94,7 +94,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Timetable created", type: messageConstants.SUCCESS }
+                    message: {content: "Timetable created", type: messageConstants.SUCCESS}
                 }
             };
         case timetableConstants.UPDATE_TIMETABLE_LOADING:
@@ -111,7 +111,7 @@ const timetableReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case timetableConstants.UPDATE_TIMETABLE_SUCCESS:
@@ -121,7 +121,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: { content: "Timetable updated", type: messageConstants.SUCCESS }
+                    message: {content: "Timetable updated", type: messageConstants.SUCCESS}
                 }
             };
         case timetableConstants.DELETE_TIMETABLE_LOADING:
@@ -138,7 +138,7 @@ const timetableReducer = (state = defaultState, action) => {
                 current: {
                     ...state.current,
                     loading: false,
-                    message: { content: action.payload, type: messageConstants.FAIL }
+                    message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
         case timetableConstants.DELETE_TIMETABLE_SUCCESS:
@@ -148,23 +148,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: { content: "Timetable deleted", type: messageConstants.SUCCESS }
-                }
-            };
-        case timetableConstants.CLEAR_TIMETABLE_MESSAGE:
-            return {
-                ...state,
-                current: {
-                    ...state.current,
-                    message: {}
-                }
-            };
-        case timetableConstants.CLEAR_TIMETABLE_LIST_MESSAGE:
-            return {
-                ...state,
-                list: {
-                    ...state.list,
-                    message: {}
+                    message: {content: "Timetable deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:

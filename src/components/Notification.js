@@ -1,12 +1,11 @@
 import React, {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {notification} from "antd";
 import messageConstants from "../store/constants/messageConstants";
 import "./Notification.css";
 
 function Notification() {
     const DEBUG_MODE = false;
-    const dispatch = useDispatch();
 
     const lessonMessage = useSelector(state => state.lesson.current.message);
     const roomMessage = useSelector(state => state.room.current.message);
@@ -38,7 +37,7 @@ function Notification() {
         if (timetableListMessage) openNotification(timetableListMessage);
 
     }, [
-        dispatch, DEBUG_MODE, lessonMessage, roomMessage, timeslotMessage, timetableMessage,
+        DEBUG_MODE, lessonMessage, roomMessage, timeslotMessage, timetableMessage,
         lessonListMessage, roomListMessage, timeslotListMessage, timetableListMessage
     ]);
 
