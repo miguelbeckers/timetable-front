@@ -1,5 +1,5 @@
 import timeslotConstants from "../constants/timeslotConstants";
-import messageConstants from "../../common/messageConstants";
+import messageConstants from "../constants/messageConstants";
 
 const defaultState = {
     current: {

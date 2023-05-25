@@ -1,5 +1,5 @@
 import lessonConstants from "../constants/lessonConstants";
-import messageConstants from "../../common/messageConstants";
+import messageConstants from "../constants/messageConstants";
 
 const defaultState = {
     current: {

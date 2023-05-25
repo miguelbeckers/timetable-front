@@ -1,5 +1,5 @@
 import timetableConstants from "../constants/timetableConstants";
-import messageConstants from "../../common/messageConstants";
+import messageConstants from "../constants/messageConstants";
 
 const defaultState = {
     current: {

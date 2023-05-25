@@ -1,5 +1,5 @@
 import roomConstants from "../constants/roomConstants";
-import messageConstants from "../../common/messageConstants";
+import messageConstants from "../constants/messageConstants";
 
 const defaultState = {
     current: {
