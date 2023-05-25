@@ -151,6 +151,22 @@ const lessonReducer = (state = defaultState, action) => {
                     message: { content: "Lesson deleted", type: messageConstants.SUCCESS }
                 }
             };
+        case lessonConstants.CLEAR_LESSON_MESSAGE:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    message: {}
+                }
+            };
+        case lessonConstants.CLEAR_LESSON_LIST_MESSAGE:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    message: {}
+                }
+            };
         default:
             return state;
     }

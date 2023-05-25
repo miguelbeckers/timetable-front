@@ -151,6 +151,22 @@ const timetableReducer = (state = defaultState, action) => {
                     message: { content: "Timetable deleted", type: messageConstants.SUCCESS }
                 }
             };
+        case timetableConstants.CLEAR_TIMETABLE_MESSAGE:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    message: {}
+                }
+            };
+        case timetableConstants.CLEAR_TIMETABLE_LIST_MESSAGE:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    message: {}
+                }
+            };
         default:
             return state;
     }

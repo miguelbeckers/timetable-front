@@ -151,6 +151,22 @@ const timeslotReducer = (state = defaultState, action) => {
                     message: { content: "Timeslot deleted", type: messageConstants.SUCCESS }
                 }
             };
+        case timeslotConstants.CLEAR_TIMESLOT_MESSAGE:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    message: {}
+                }
+            };
+        case timeslotConstants.CLEAR_TIMESLOT_LIST_MESSAGE:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    message: {}
+                }
+            };
         default:
             return state;
     }

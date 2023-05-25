@@ -151,6 +151,22 @@ const roomReducer = (state = defaultState, action) => {
                     message: { content: "Room deleted", type: messageConstants.SUCCESS }
                 }
             };
+        case roomConstants.CLEAR_ROOM_MESSAGE:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    message: {}
+                }
+            };
+        case roomConstants.CLEAR_ROOM_LIST_MESSAGE:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    message: {}
+                }
+            };
         default:
             return state;
     }
