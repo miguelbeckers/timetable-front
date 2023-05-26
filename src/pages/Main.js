@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
+import { Table} from "antd";
 
 import {getAllLessons} from "../store/actions/lessonActions";
 import {getAllRooms} from "../store/actions/roomActions";
@@ -21,9 +22,34 @@ function Main() {
         dispatch(getAllTimeslots());
     }, [dispatch]);
 
+    const columns = room.list.data.map((r) => {
+        return {
+            title: r.name.toUpperCase(),
+            dataIndex: r.name,
+            key: r.id,
+        }
+    });
+
+    const timeslotColumn = {
+        title: "TIMESLOT",
+        dataIndex: "timeslot",
+        key: -1,
+        render: ({ dayOfWeek, startTime }) => `${dayOfWeek} ${startTime.toString().slice(0, -3)}`
+    };
+
+    columns.unshift(timeslotColumn);
+
+    const dataSource = timeslot.list.data.map(t => {
+        const row = {};
+        columns.forEach(column => {
+            row[column.dataIndex] = undefined;
+        });
+        row.timeslot = t;
+        return row;
+    });
 
     return (<>
-        hello
+        <Table dataSource={dataSource} columns={columns} />
     </>);
 }
 
