@@ -8,11 +8,11 @@ function Notification() {
     const DEBUG_MODE = false;
 
     const lessonMessage = useSelector(state => state.lesson.current.message);
-    const roomMessage = useSelector(state => state.room.current.message);
+    const classroomMessage = useSelector(state => state.classroom.current.message);
     const timeslotMessage = useSelector(state => state.timeslot.current.message);
     const timetableMessage = useSelector(state => state.timetable.current.message);
     const lessonListMessage = useSelector(state => state.lesson.list.message);
-    const roomListMessage = useSelector(state => state.room.list.message);
+    const classroomListMessage = useSelector(state => state.classroom.list.message);
     const timeslotListMessage = useSelector(state => state.timeslot.list.message);
     const timetableListMessage = useSelector(state => state.timetable.list.message);
 
@@ -29,16 +29,16 @@ function Notification() {
 
         if (lessonMessage) openNotification(lessonMessage);
         if (lessonListMessage) openNotification(lessonListMessage);
-        if (roomMessage) openNotification(roomMessage);
-        if (roomListMessage) openNotification(roomListMessage);
+        if (classroomMessage) openNotification(classroomMessage);
+        if (classroomListMessage) openNotification(classroomListMessage);
         if (timeslotMessage) openNotification(timeslotMessage);
         if (timeslotListMessage) openNotification(timeslotListMessage);
         if (timetableMessage) openNotification(timetableMessage);
         if (timetableListMessage) openNotification(timetableListMessage);
 
     }, [
-        DEBUG_MODE, lessonMessage, roomMessage, timeslotMessage, timetableMessage,
-        lessonListMessage, roomListMessage, timeslotListMessage, timetableListMessage
+        DEBUG_MODE, lessonMessage, classroomMessage, timeslotMessage, timetableMessage,
+        lessonListMessage, classroomListMessage, timeslotListMessage, timetableListMessage
     ]);
 
 

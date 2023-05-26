@@ -67,7 +67,7 @@ const timeslotReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Timeslot loaded", type: messageConstants.INFO}
+                    message: {content: "Timeslots loaded", type: messageConstants.INFO}
                 }
             };
         case timeslotConstants.CREATE_TIMESLOT_LOADING:
@@ -94,7 +94,7 @@ const timeslotReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Timeslot created", type: messageConstants.SUCCESS}
+                    message: {content: "Timeslots created", type: messageConstants.SUCCESS}
                 }
             };
         case timeslotConstants.UPDATE_TIMESLOT_LOADING:
@@ -121,7 +121,7 @@ const timeslotReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Timeslot updated", type: messageConstants.SUCCESS}
+                    message: {content: "Timeslots updated", type: messageConstants.SUCCESS}
                 }
             };
         case timeslotConstants.DELETE_TIMESLOT_LOADING:
@@ -148,7 +148,7 @@ const timeslotReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: {content: "Timeslot deleted", type: messageConstants.SUCCESS}
+                    message: {content: "Timeslots deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:

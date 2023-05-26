@@ -1,0 +1,11 @@
+.timetable{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timetable > .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}

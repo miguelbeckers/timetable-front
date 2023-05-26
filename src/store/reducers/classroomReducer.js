@@ -1,4 +1,4 @@
-import roomConstants from "../constants/roomConstants";
+import classroomConstants from "../constants/classroomConstants";
 import messageConstants from "../constants/messageConstants";
 
 const defaultState = {
@@ -14,9 +14,9 @@ const defaultState = {
     }
 };
 
-const roomReducer = (state = defaultState, action) => {
+const classroomReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case roomConstants.GET_ROOM_LIST_LOADING:
+        case classroomConstants.GET_CLASSROOM_LIST_LOADING:
             return {
                 ...state,
                 list: {
@@ -24,7 +24,7 @@ const roomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case roomConstants.GET_ROOM_LIST_FAIL:
+        case classroomConstants.GET_CLASSROOM_LIST_FAIL:
             return {
                 ...state,
                 list: {
@@ -33,17 +33,17 @@ const roomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case roomConstants.GET_ROOM_LIST_SUCCESS:
+        case classroomConstants.GET_CLASSROOM_LIST_SUCCESS:
             return {
                 ...state,
                 list: {
                     ...state.list,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Rooms loaded", type: messageConstants.INFO}
+                    message: {content: "Classrooms loaded", type: messageConstants.INFO}
                 }
             };
-        case roomConstants.GET_ROOM_LOADING:
+        case classroomConstants.GET_CLASSROOM_LOADING:
             return {
                 ...state,
                 current: {
@@ -51,7 +51,7 @@ const roomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case roomConstants.GET_ROOM_FAIL:
+        case classroomConstants.GET_CLASSROOM_FAIL:
             return {
                 ...state,
                 current: {
@@ -60,17 +60,17 @@ const roomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case roomConstants.GET_ROOM_SUCCESS:
+        case classroomConstants.GET_CLASSROOM_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Room loaded", type: messageConstants.INFO}
+                    message: {content: "Classrooms loaded", type: messageConstants.INFO}
                 }
             };
-        case roomConstants.CREATE_ROOM_LOADING:
+        case classroomConstants.CREATE_CLASSROOM_LOADING:
             return {
                 ...state,
                 current: {
@@ -78,7 +78,7 @@ const roomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case roomConstants.CREATE_ROOM_FAIL:
+        case classroomConstants.CREATE_CLASSROOM_FAIL:
             return {
                 ...state,
                 current: {
@@ -87,17 +87,17 @@ const roomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case roomConstants.CREATE_ROOM_SUCCESS:
+        case classroomConstants.CREATE_CLASSROOM_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Room created", type: messageConstants.SUCCESS}
+                    message: {content: "Classrooms created", type: messageConstants.SUCCESS}
                 }
             };
-        case roomConstants.UPDATE_ROOM_LOADING:
+        case classroomConstants.UPDATE_CLASSROOM_LOADING:
             return {
                 ...state,
                 current: {
@@ -105,7 +105,7 @@ const roomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case roomConstants.UPDATE_ROOM_FAIL:
+        case classroomConstants.UPDATE_CLASSROOM_FAIL:
             return {
                 ...state,
                 current: {
@@ -114,17 +114,17 @@ const roomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case roomConstants.UPDATE_ROOM_SUCCESS:
+        case classroomConstants.UPDATE_CLASSROOM_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Room updated", type: messageConstants.SUCCESS}
+                    message: {content: "Classrooms updated", type: messageConstants.SUCCESS}
                 }
             };
-        case roomConstants.DELETE_ROOM_LOADING:
+        case classroomConstants.DELETE_CLASSROOM_LOADING:
             return {
                 ...state,
                 current: {
@@ -132,7 +132,7 @@ const roomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case roomConstants.DELETE_ROOM_FAIL:
+        case classroomConstants.DELETE_CLASSROOM_FAIL:
             return {
                 ...state,
                 current: {
@@ -141,14 +141,14 @@ const roomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case roomConstants.DELETE_ROOM_SUCCESS:
+        case classroomConstants.DELETE_CLASSROOM_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: {content: "Room deleted", type: messageConstants.SUCCESS}
+                    message: {content: "Classrooms deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:
@@ -156,4 +156,4 @@ const roomReducer = (state = defaultState, action) => {
     }
 };
 
-export default roomReducer;
+export default classroomReducer;

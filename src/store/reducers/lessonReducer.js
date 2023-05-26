@@ -67,7 +67,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Lesson loaded", type: messageConstants.INFO}
+                    message: {content: "Lessons loaded", type: messageConstants.INFO}
                 }
             };
         case lessonConstants.CREATE_LESSON_LOADING:
@@ -94,7 +94,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Lesson created", type: messageConstants.SUCCESS}
+                    message: {content: "Lessons created", type: messageConstants.SUCCESS}
                 }
             };
         case lessonConstants.UPDATE_LESSON_LOADING:
@@ -121,7 +121,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Lesson updated", type: messageConstants.SUCCESS}
+                    message: {content: "Lessons updated", type: messageConstants.SUCCESS}
                 }
             };
         case lessonConstants.DELETE_LESSON_LOADING:
@@ -148,7 +148,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: {content: "Lesson deleted", type: messageConstants.SUCCESS}
+                    message: {content: "Lessons deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:
