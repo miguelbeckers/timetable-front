@@ -1,13 +1,10 @@
 import React from 'react';
 import {Table} from 'antd';
 import LessonTag from './LessonTag';
-import randomColor from 'randomcolor';
 
 import "./ScheduleTable.css"
 
 const ScheduleTable = ({timeslots, classrooms, lessons}) => {
-    const subjectColors = {};
-
     const columns = [
         {
             title: 'Time Slot',
@@ -24,7 +21,6 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
                         subject={lesson.subject}
                         teacher={lesson.teacher}
                         studentGroup={lesson.studentGroup}
-                        color={subjectColors[lesson.subject]}
                     />
                 ) : (
                     ''
@@ -39,15 +35,9 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
         };
 
         classrooms.forEach((classroom) => {
-            const lesson = lessons.find(
+            rowData[classroom.id.toString()] = lessons.find(
                 (lesson) => lesson.timeslot?.id === timeslot.id && lesson.classroom?.id === classroom.id
             );
-
-            rowData[classroom.id.toString()] = lesson;
-
-            if (lesson && !subjectColors[lesson.subject]) {
-                subjectColors[lesson.subject] = randomColor({luminosity: 'light'});
-            }
         });
 
         return rowData;
@@ -60,7 +50,7 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
                 subject={lesson.subject}
                 teacher={lesson.teacher}
                 studentGroup={lesson.studentGroup}
-                color={subjectColors[lesson.subject]}
+                color={lesson.color}
             /> : <></>)}
         </div>
     </div>;
