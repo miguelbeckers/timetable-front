@@ -49,6 +49,15 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
 
     return <div className={"scheduleTable"}>
         <Table dataSource={data} columns={columns} pagination={false}/>
+        <div className={"notAssigned"}>
+            {lessons.map(lesson => !lesson.classroom ? <LessonTag
+                lessonKey={lesson.id}
+                subject={lesson.subject}
+                teacher={lesson.teacher}
+                studentGroup={lesson.studentGroup}
+                color={lesson.color}
+            /> : null)}
+        </div>
     </div>;
 };
 
