@@ -14,17 +14,21 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
         ...classrooms.map((classroom) => ({
             title: classroom.name,
             dataIndex: classroom.id.toString(),
-            key: classroom.id.toString(),
-            render: (lesson) =>
-                lesson ? (
-                    <LessonTag
-                        subject={lesson.subject}
-                        teacher={lesson.teacher}
-                        studentGroup={lesson.studentGroup}
-                    />
-                ) : (
-                    ''
-                ),
+            key: `${classroom.id}_${timeslots.map((timeslot) => timeslot.id).join("_")}`,
+            render: (lessons) => {
+                return <div style={{display: "flex", flexDirection: "column", gap: "10px"}}>
+                    {lessons.map(lesson => (
+                        <LessonTag
+                            key={lesson.id}
+                            lessonKey={lesson.id}
+                            subject={lesson.subject}
+                            teacher={lesson.teacher}
+                            studentGroup={lesson.studentGroup}
+                            color={lesson.color}
+                        />
+                    ))}
+                </div>
+            }
         })),
     ];
 
@@ -35,7 +39,7 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
         };
 
         classrooms.forEach((classroom) => {
-            rowData[classroom.id.toString()] = lessons.find(
+            rowData[classroom.id.toString()] = lessons.filter(
                 (lesson) => lesson.timeslot?.id === timeslot.id && lesson.classroom?.id === classroom.id
             );
         });
@@ -45,14 +49,6 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
 
     return <div className={"scheduleTable"}>
         <Table dataSource={data} columns={columns} pagination={false}/>
-        <div className={"notAssigned"}>
-            {lessons.map(lesson => !lesson.classroom ? <LessonTag
-                subject={lesson.subject}
-                teacher={lesson.teacher}
-                studentGroup={lesson.studentGroup}
-                color={lesson.color}
-            /> : <></>)}
-        </div>
     </div>;
 };
 
