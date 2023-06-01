@@ -20,6 +20,7 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
                     {lessons.map(lesson => (
                         <LessonCard
                             key={lesson.id}
+                            id={lesson.id}
                             subject={lesson.subject}
                             teacher={lesson.teacher}
                             studentGroup={lesson.studentGroup}
@@ -51,6 +52,7 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
         <div className={"notAssigned"}>
             {lessons.map(lesson => !lesson.classroom ? <LessonCard
                 key={lesson.id}
+                id={lesson.id}
                 subject={lesson.subject}
                 teacher={lesson.teacher}
                 studentGroup={lesson.studentGroup}
