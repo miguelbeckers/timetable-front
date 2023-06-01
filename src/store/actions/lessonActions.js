@@ -100,3 +100,23 @@ export const deleteLesson = (id) => async dispatch => {
         });
     }
 };
+
+export const resetLessons = () => async dispatch => {
+    try {
+        dispatch({
+            type: lessonConstants.RESET_LESSON_LOADING
+        });
+
+        const res = await lessonServices.resetLesson();
+
+        dispatch({
+            type: lessonConstants.RESET_LESSON_SUCCESS,
+            payload: res.data
+        });
+    } catch (e) {
+        dispatch({
+            type: lessonConstants.RESET_LESSON_FAIL,
+            payload: e.response && e.response.data ? e.response.data.message || e.response.data.error : e.message
+        });
+    }
+};

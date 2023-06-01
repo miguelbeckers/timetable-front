@@ -100,3 +100,4 @@ export const deleteTimeslot = (id) => async dispatch => {
         });
     }
 };
+

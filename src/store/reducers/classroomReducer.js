@@ -67,7 +67,7 @@ const classroomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Classrooms loaded", type: messageConstants.INFO}
+                    message: {content: "Classroom loaded", type: messageConstants.INFO}
                 }
             };
         case classroomConstants.CREATE_CLASSROOM_LOADING:
@@ -94,7 +94,7 @@ const classroomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Classrooms created", type: messageConstants.SUCCESS}
+                    message: {content: "Classroom created", type: messageConstants.SUCCESS}
                 }
             };
         case classroomConstants.UPDATE_CLASSROOM_LOADING:
@@ -121,7 +121,7 @@ const classroomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Classrooms updated", type: messageConstants.SUCCESS}
+                    message: {content: "Classroom updated", type: messageConstants.SUCCESS}
                 }
             };
         case classroomConstants.DELETE_CLASSROOM_LOADING:
@@ -148,7 +148,7 @@ const classroomReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: {content: "Classrooms deleted", type: messageConstants.SUCCESS}
+                    message: {content: "Classroom deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:

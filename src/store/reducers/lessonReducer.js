@@ -1,4 +1,5 @@
 import lessonConstants from "../constants/lessonConstants";
+import timetableConstants from "../constants/timetableConstants";
 import messageConstants from "../constants/messageConstants";
 
 const defaultState = {
@@ -40,7 +41,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.list,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Lessons loaded", type: messageConstants.INFO}
+                    message: {content: "StudentGroups loaded", type: messageConstants.INFO}
                 }
             };
         case lessonConstants.GET_LESSON_LOADING:
@@ -67,7 +68,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Lessons loaded", type: messageConstants.INFO}
+                    message: {content: "Lesson loaded", type: messageConstants.INFO}
                 }
             };
         case lessonConstants.CREATE_LESSON_LOADING:
@@ -94,7 +95,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Lessons created", type: messageConstants.SUCCESS}
+                    message: {content: "Lesson created", type: messageConstants.SUCCESS}
                 }
             };
         case lessonConstants.UPDATE_LESSON_LOADING:
@@ -121,7 +122,7 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Lessons updated", type: messageConstants.SUCCESS}
+                    message: {content: "Lesson updated", type: messageConstants.SUCCESS}
                 }
             };
         case lessonConstants.DELETE_LESSON_LOADING:
@@ -148,7 +149,42 @@ const lessonReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: {content: "Lessons deleted", type: messageConstants.SUCCESS}
+                    message: {content: "Lesson deleted", type: messageConstants.SUCCESS}
+                }
+            };
+        case lessonConstants.RESET_LESSON_LOADING:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    loading: true
+                }
+            };
+        case lessonConstants.RESET_LESSON_FAIL:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    loading: false,
+                    message: {content: action.payload, type: messageConstants.FAIL}
+                }
+            };
+        case lessonConstants.RESET_LESSON_SUCCESS:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    loading: false,
+                    data: action.payload,
+                    message: {content: "StudentGroups reset", type: messageConstants.INFO}
+                }
+            };
+        case timetableConstants.SOLVE_TIMETABLE_SUCCESS:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    data: action.payload.lessons,
                 }
             };
         default:

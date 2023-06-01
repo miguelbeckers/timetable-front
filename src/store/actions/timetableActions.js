@@ -100,3 +100,43 @@ export const deleteTimetable = (id) => async dispatch => {
         });
     }
 };
+
+export const solveTimetable = () => async dispatch => {
+    try {
+        dispatch({
+            type: timetableConstants.SOLVE_TIMETABLE_LOADING
+        });
+
+        const res = await timetableServices.solveTimetable();
+
+        dispatch({
+            type: timetableConstants.SOLVE_TIMETABLE_SUCCESS,
+            payload: res.data
+        });
+    } catch (e) {
+        dispatch({
+            type: timetableConstants.SOLVE_TIMETABLE_FAIL,
+            payload: e.response && e.response.data ? e.response.data.message || e.response.data.error : e.message
+        });
+    }
+};
+
+export const stopSolving = () => async dispatch => {
+    try {
+        dispatch({
+            type: timetableConstants.STOP_TIMETABLE_LOADING
+        });
+
+        const res = await timetableServices.stopSolving();
+
+        dispatch({
+            type: timetableConstants.STOP_TIMETABLE_SUCCESS,
+            payload: res.data
+        });
+    } catch (e) {
+        dispatch({
+            type: timetableConstants.STOP_TIMETABLE_FAIL,
+            payload: e.response && e.response.data ? e.response.data.message || e.response.data.error : e.message
+        });
+    }
+};

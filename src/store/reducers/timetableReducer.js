@@ -67,7 +67,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Timetable loaded", type: messageConstants.INFO}
+                    message: {content: "Classrooms loaded", type: messageConstants.INFO}
                 }
             };
         case timetableConstants.CREATE_TIMETABLE_LOADING:
@@ -94,7 +94,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Timetable created", type: messageConstants.SUCCESS}
+                    message: {content: "Classrooms created", type: messageConstants.SUCCESS}
                 }
             };
         case timetableConstants.UPDATE_TIMETABLE_LOADING:
@@ -121,7 +121,7 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Timetable updated", type: messageConstants.SUCCESS}
+                    message: {content: "Classrooms updated", type: messageConstants.SUCCESS}
                 }
             };
         case timetableConstants.DELETE_TIMETABLE_LOADING:
@@ -148,7 +148,59 @@ const timetableReducer = (state = defaultState, action) => {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: {content: "Timetable deleted", type: messageConstants.SUCCESS}
+                    message: {content: "Classrooms deleted", type: messageConstants.SUCCESS}
+                }
+            };
+        case timetableConstants.SOLVE_TIMETABLE_LOADING:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    loading: true
+                }
+            };
+        case timetableConstants.SOLVE_TIMETABLE_FAIL:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    loading: false,
+                    message: {content: action.payload, type: messageConstants.FAIL}
+                }
+            };
+        case timetableConstants.SOLVE_TIMETABLE_SUCCESS:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    loading: false,
+                    data: action.payload,
+                    message: {content: "Classrooms deleted", type: messageConstants.SUCCESS}
+                }
+            };
+        case timetableConstants.STOP_TIMETABLE_LOADING:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    loading: true
+                }
+            };
+        case timetableConstants.STOP_TIMETABLE_FAIL:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    loading: false,
+                    message: {content: action.payload, type: messageConstants.FAIL}
+                }
+            };
+        case timetableConstants.STOP_TIMETABLE_SUCCESS:
+            return {
+                ...state,
+                current: {
+                    ...state.current,
+                    loading: false
                 }
             };
         default:

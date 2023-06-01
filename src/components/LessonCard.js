@@ -1,10 +1,9 @@
 import React from 'react';
 import {Card} from 'antd';
 
-const LessonTag = ({lessonKey, subject, teacher, studentGroup, color}) => {
+const LessonCard = ({subject, teacher, studentGroup, color}) => {
     return (
         <Card
-            key={lessonKey}
             size="small"
             title={subject}
             headStyle={{backgroundColor: color, borderColor: color}}
@@ -16,4 +15,4 @@ const LessonTag = ({lessonKey, subject, teacher, studentGroup, color}) => {
     );
 };
 
-export default LessonTag;
+export default LessonCard;

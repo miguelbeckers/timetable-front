@@ -21,6 +21,10 @@ class LessonServices {
   deleteLesson(id) {
     return http.delete(`/lessons/${id}`);
   }
+
+  resetLesson() {
+    return http.put(`/lessons/reset`);
+  }
 }
 
 const lessonServices = new LessonServices();

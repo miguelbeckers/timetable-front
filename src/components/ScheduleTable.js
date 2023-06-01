@@ -1,6 +1,6 @@
 import React from 'react';
 import {Table} from 'antd';
-import LessonTag from './LessonTag';
+import LessonCard from './LessonCard';
 
 import "./ScheduleTable.css"
 
@@ -18,9 +18,8 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
             render: (lessons) => {
                 return <div style={{display: "flex", flexDirection: "column", gap: "10px"}}>
                     {lessons.map(lesson => (
-                        <LessonTag
+                        <LessonCard
                             key={lesson.id}
-                            lessonKey={lesson.id}
                             subject={lesson.subject}
                             teacher={lesson.teacher}
                             studentGroup={lesson.studentGroup}
@@ -50,8 +49,8 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
     return <div className={"scheduleTable"}>
         <Table dataSource={data} columns={columns} pagination={false}/>
         <div className={"notAssigned"}>
-            {lessons.map(lesson => !lesson.classroom ? <LessonTag
-                lessonKey={lesson.id}
+            {lessons.map(lesson => !lesson.classroom ? <LessonCard
+                key={lesson.id}
                 subject={lesson.subject}
                 teacher={lesson.teacher}
                 studentGroup={lesson.studentGroup}

@@ -21,6 +21,14 @@ class TimetableServices {
   deleteTimetable(id) {
     return http.delete(`/timetables/${id}`);
   }
+
+  solveTimetable() {
+    return http.post(`/timetables/solve`);
+  }
+
+  stopSolving() {
+    return http.post(`/timetables/stop`);
+  }
 }
 
 const timetableServices = new TimetableServices();
