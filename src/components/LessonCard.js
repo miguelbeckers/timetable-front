@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card} from 'antd';
 
-const LessonCard = ({id, subject, teacher, studentGroup, color}) => {
+const LessonCard = ({id, subject, professor, studentGroup, color}) => {
     return (
         <Card
             size="small"
@@ -10,7 +10,7 @@ const LessonCard = ({id, subject, teacher, studentGroup, color}) => {
             style={{width: 200}}
             hoverable
             extra={id}>
-            <span>Teacher: {teacher}</span>
+            <span>Professor: {professor}</span>
             <br/>
             <span>Group: {studentGroup}</span>
         </Card>

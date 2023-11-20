@@ -22,7 +22,7 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
                             key={lesson.id}
                             id={lesson.id}
                             subject={lesson.subject}
-                            teacher={lesson.teacher}
+                            professor={lesson.professor ? lesson.professor.name : "undefined"}
                             studentGroup={lesson.studentGroup}
                             color={lesson.color}
                         />
@@ -54,7 +54,7 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
                 key={lesson.id}
                 id={lesson.id}
                 subject={lesson.subject}
-                teacher={lesson.teacher}
+                professor={lesson.professor}
                 studentGroup={lesson.studentGroup}
                 color={lesson.color}
             /> : null)}

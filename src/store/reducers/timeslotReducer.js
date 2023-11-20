@@ -40,7 +40,7 @@ const timeslotReducer = (state = defaultState, action) => {
                     ...state.list,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Teachers loaded", type: messageConstants.INFO}
+                    message: {content: "Professor loaded", type: messageConstants.INFO}
                 }
             };
         case timeslotConstants.GET_TIMESLOT_LOADING:
