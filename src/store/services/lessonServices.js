@@ -3,27 +3,27 @@ import http from "../../config";
 class LessonServices {
 
   getAllLessons() {
-    return http.get("/lessons");
+    return http.get("/lesson-units");
   }
   
   getLessonById(id) {
-    return http.get(`/lessons/${id}`);
+    return http.get(`/lesson-units/${id}`);
   }
 
   createLesson(data) {
-    return http.post(`/lessons`, data);
+    return http.post(`/lesson-units`, data);
   }
 
   updateLesson(id, data) {
-    return http.put(`/lessons/${id}`, data);
+    return http.put(`/lesson-units/${id}`, data);
   }
 
   deleteLesson(id) {
-    return http.delete(`/lessons/${id}`);
+    return http.delete(`/lesson-units/${id}`);
   }
 
   resetLesson() {
-    return http.put(`/lessons/reset`);
+    return http.put(`/lesson-units/reset`);
   }
 }
 
