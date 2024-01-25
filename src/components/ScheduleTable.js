@@ -17,14 +17,14 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
             key: `${classroom.id}_${timeslots.map((timeslot) => timeslot.id).join("_")}`,
             render: (lessons) => {
                 return <div style={{display: "flex", flexDirection: "column", gap: "10px"}}>
-                    {lessons.map(lesson => (
+                    {lessons.map(unit => (
                         <LessonCard
-                            key={lesson.id}
-                            id={lesson.id}
-                            subject={lesson.subject}
-                            professor={lesson.professor ? lesson.professor.name : "undefined"}
-                            studentGroup={lesson.studentGroup}
-                            color={lesson.color}
+                            key={unit.id}
+                            id={unit.id}
+                            subject={unit.subject}
+                            professor={unit.professor ? unit.professor.name : "undefined"}
+                            studentGroup={unit.studentGroup}
+                            color={unit.lesson.color}
                         />
                     ))}
                 </div>
