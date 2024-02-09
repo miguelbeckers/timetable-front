@@ -8,6 +8,7 @@ import Loading from "./components/Loading";
 import Notification from "./components/Notification";
 import routes from "./routes";
 import history from "./history";
+import Test from "./components/Test";
 
 function App() {
     const logged = true;
@@ -20,8 +21,9 @@ const AppWrapper = () => {
         <React.StrictMode>
             <Provider store={store()}>
                 <BrowserRouter history={history}>
-                    <Notification/>
-                    <App/>
+                    <Test/>
+                    {/*<Notification/>*/}
+                    {/*<App/>*/}
                 </BrowserRouter>
             </Provider>
         </React.StrictMode>

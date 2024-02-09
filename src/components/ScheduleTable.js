@@ -56,7 +56,7 @@ const ScheduleTable = ({timeslots, classrooms, lessons}) => {
                 subject={lesson.subject}
                 professor={lesson.professor}
                 studentGroup={lesson.studentGroup}
-                color={lesson.color}
+                color={lesson.lesson.color}
             /> : null)}
         </div>
     </div>;
