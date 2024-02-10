@@ -18,7 +18,7 @@ const Box = ({id, color, children}) => {
                 backgroundColor: color,
                 padding: '1rem',
                 margin: '0.5rem',
-                opacity: isDragging ? 0.5 : 1,
+                opacity: isDragging ? 0 : 1,
                 cursor: 'move',
             }}
         >
@@ -27,17 +27,14 @@ const Box = ({id, color, children}) => {
     );
 };
 
-const DropZone = ({placedBoxes, setPlacedBoxes, setBoxes}) => {
+const DropZone = ({boxes, num, setBoxes}) => {
     const [{canDrop, isOver}, drop] = useDrop({
         accept: 'box',
         drop: (item) => {
-            setPlacedBoxes((prevPlacedBoxes) => [
-                ...prevPlacedBoxes,
-                {id: item.id, color: item.color, text: item.text},
-            ]);
-
-            setBoxes((prevBoxes) => prevBoxes.filter((box) => box.id !== item.id));
+            setBoxes(boxes.map((box) => box.id === item.id ?
+                { ...box, num: num } : box))
         },
+
         collect: (monitor) => ({
             isOver: monitor.isOver(),
             canDrop: monitor.canDrop(),
@@ -56,39 +53,29 @@ const DropZone = ({placedBoxes, setPlacedBoxes, setBoxes}) => {
                 backgroundColor: isActive ? 'lightgreen' : 'white',
             }}
         >
-            {placedBoxes ? placedBoxes.map((box) => (
-                <Box key={box.id} color={box.color}>
-                    {box.text}
-                </Box>
-            )) : null}
+            {boxes.map((box) => (box.num === num ?
+                    <Box key={box.id} id={box.id} color={box.color}>
+                        {box.text}
+                    </Box> : null
+            ))}
         </div>
     );
 };
 
 const Test = () => {
     const [boxes, setBoxes] = useState([
-        {id: 1, text: 'Box 1', color: 'lightblue'},
-        {id: 2, text: 'Box 2', color: 'lightcoral'},
-        {id: 3, text: 'Box 3', color: 'lightgoldenrodyellow'},
+        {id: 1, num: 1, text: 'Box 1', color: 'lightblue'},
+        {id: 2, num: 1, text: 'Box 2', color: 'lightcoral'},
+        {id: 3, num: 1, text: 'Box 3', color: 'lightgoldenrodyellow'},
     ]);
-
-    const [placedBoxes, setPlacedBoxes] = useState([]);
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <div style={{
-                display: 'flex',
-                backgroundColor: 'lightgray',
-                padding: '10px',
-                minHeight: '10px'
-            }}>
-                {boxes.map((box) => (
-                    <Box key={box.id} id={box.id} color={box.color}>
-                        {box.text}
-                    </Box>
-                ))}
+            <div style={{backgroundColor: "gray", display: "flex", gap: "10px", padding: "10px"}}>
+                <DropZone boxes={boxes} setBoxes={setBoxes} num={1}/>
+                <DropZone boxes={boxes} setBoxes={setBoxes} num={2}/>
+                <DropZone boxes={boxes} setBoxes={setBoxes} num={3}/>
             </div>
-            <DropZone placedBoxes={placedBoxes} setPlacedBoxes={setPlacedBoxes} setBoxes={setBoxes}/>
         </DndProvider>
     );
 };
