@@ -4,17 +4,8 @@ import {Provider} from "react-redux";
 import store from "./store";
 import "./App.css";
 
-import Loading from "./components/Loading";
-import Notification from "./components/Notification";
-import routes from "./routes";
 import history from "./history";
 import Test from "./components/Test";
-
-function App() {
-    const logged = true;
-    const loading = false;
-    return loading ? <Loading/> : routes(logged);
-}
 
 const AppWrapper = () => {
     return (
@@ -22,8 +13,6 @@ const AppWrapper = () => {
             <Provider store={store()}>
                 <BrowserRouter history={history}>
                     <Test/>
-                    {/*<Notification/>*/}
-                    {/*<App/>*/}
                 </BrowserRouter>
             </Provider>
         </React.StrictMode>
