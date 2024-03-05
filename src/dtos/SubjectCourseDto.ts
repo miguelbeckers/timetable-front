@@ -1,4 +1,4 @@
-interface SubjectCourseDto {
+export interface SubjectCourseDto {
     id: number;
     courseId: number;
     subjectId: number;

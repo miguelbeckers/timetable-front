@@ -1,4 +1,4 @@
-interface ClassroomDto {
+export interface ClassroomDto {
     id: number;
     name: string;
     abbreviation: string;

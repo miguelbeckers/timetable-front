@@ -1,4 +1,4 @@
-interface SubjectTypeDto {
+export interface DepartmentDto {
     id: number;
     name: string;
     abbreviation: string;

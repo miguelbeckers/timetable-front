@@ -1,4 +1,4 @@
-interface PeriodDto {
+export interface SubjectDto {
     id: number;
     name: string;
     abbreviation: string;
