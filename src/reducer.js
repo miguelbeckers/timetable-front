@@ -1,9 +1,9 @@
 import {combineReducers} from "redux";
 
-import lessonReducer from "./store/reducers/lessonReducer";
-import classroomReducer from "./store/reducers/classroomReducer";
-import timeslotReducer from "./store/reducers/timeslotReducer";
-import timetableReducer from "./store/reducers/timetableReducer";
+import lessonReducer from "./reducers/lessonReducer";
+import classroomReducer from "./reducers/classroomReducer";
+import timeslotReducer from "./reducers/timeslotReducer";
+import timetableReducer from "./reducers/timetableReducer";
 
 const rootReducer = combineReducers({
     lesson: lessonReducer,

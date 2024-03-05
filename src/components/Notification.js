@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {notification} from "antd";
-import messageConstants from "../store/constants/messageConstants";
+import messageConstants from "../constants/messageConstants";
 import "./Notification.css";
 
 function Notification() {

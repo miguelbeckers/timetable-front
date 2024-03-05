@@ -1,14 +1,14 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllLessons, resetLessons} from "../store/actions/lessonActions";
-import {getAllClassrooms} from "../store/actions/classroomActions";
-import {getAllTimeslots} from "../store/actions/timeslotActions";
-import {solveTimetable, stopSolving} from "../store/actions/timetableActions";
+import {getAllLessons, resetLessons} from "../actions/lessonActions";
+import {getAllClassrooms} from "../actions/classroomActions";
+import {getAllTimeslots} from "../actions/timeslotActions";
+import {solveTimetable, stopSolving} from "../actions/timetableActions";
 
 import {Button, Descriptions} from "antd";
 import {UndoOutlined, PlayCircleOutlined, StopOutlined} from "@ant-design/icons";
 
-import ScheduleTable from "../components/ScheduleTable";
+import ScheduleTable from "./ScheduleTable";
 import "./Classrooms.css";
 
 function Classrooms() {

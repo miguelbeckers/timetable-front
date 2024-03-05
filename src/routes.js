@@ -2,8 +2,8 @@ import React from "react";
 import {Navigate, Route, Routes} from "react-router";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
-import PageNotFound from "./pages/PageNotFound";
-import Classrooms from "./pages/Classrooms";
+import PageNotFound from "./components/PageNotFound";
+import Classrooms from "./components/Classrooms";
 
 const routes = (logged) => {
   return logged ? <div className="page">
