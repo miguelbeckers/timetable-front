@@ -14,7 +14,7 @@ const defaultState = {
     }
 };
 
-const timetableReducer = (state = defaultState, action) => {
+const timetableReducers = (state = defaultState, action) => {
     switch (action.type) {
         case timetableConstants.GET_TIMETABLE_LIST_LOADING:
             return {
@@ -208,4 +208,4 @@ const timetableReducer = (state = defaultState, action) => {
     }
 };
 
-export default timetableReducer;
+export default timetableReducers;

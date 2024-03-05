@@ -15,7 +15,7 @@ const defaultState = {
     }
 };
 
-const lessonReducer = (state = defaultState, action) => {
+const lessonReducers = (state = defaultState, action) => {
     switch (action.type) {
         case lessonConstants.GET_LESSON_LIST_LOADING:
             return {
@@ -192,4 +192,4 @@ const lessonReducer = (state = defaultState, action) => {
     }
 };
 
-export default lessonReducer;
+export default lessonReducers;

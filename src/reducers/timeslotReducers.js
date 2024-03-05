@@ -1,4 +1,4 @@
-import classroomConstants from "../constants/classroomConstants";
+import timeslotConstants from "../constants/timeslotConstants";
 import messageConstants from "../constants/messageConstants";
 
 const defaultState = {
@@ -14,9 +14,9 @@ const defaultState = {
     }
 };
 
-const classroomReducer = (state = defaultState, action) => {
+const timeslotReducers = (state = defaultState, action) => {
     switch (action.type) {
-        case classroomConstants.GET_CLASSROOM_LIST_LOADING:
+        case timeslotConstants.GET_TIMESLOT_LIST_LOADING:
             return {
                 ...state,
                 list: {
@@ -24,7 +24,7 @@ const classroomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case classroomConstants.GET_CLASSROOM_LIST_FAIL:
+        case timeslotConstants.GET_TIMESLOT_LIST_FAIL:
             return {
                 ...state,
                 list: {
@@ -33,17 +33,17 @@ const classroomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case classroomConstants.GET_CLASSROOM_LIST_SUCCESS:
+        case timeslotConstants.GET_TIMESLOT_LIST_SUCCESS:
             return {
                 ...state,
                 list: {
                     ...state.list,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Classrooms loaded", type: messageConstants.INFO}
+                    message: {content: "Professor loaded", type: messageConstants.INFO}
                 }
             };
-        case classroomConstants.GET_CLASSROOM_LOADING:
+        case timeslotConstants.GET_TIMESLOT_LOADING:
             return {
                 ...state,
                 current: {
@@ -51,7 +51,7 @@ const classroomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case classroomConstants.GET_CLASSROOM_FAIL:
+        case timeslotConstants.GET_TIMESLOT_FAIL:
             return {
                 ...state,
                 current: {
@@ -60,17 +60,17 @@ const classroomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case classroomConstants.GET_CLASSROOM_SUCCESS:
+        case timeslotConstants.GET_TIMESLOT_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Classroom loaded", type: messageConstants.INFO}
+                    message: {content: "Timeslot loaded", type: messageConstants.INFO}
                 }
             };
-        case classroomConstants.CREATE_CLASSROOM_LOADING:
+        case timeslotConstants.CREATE_TIMESLOT_LOADING:
             return {
                 ...state,
                 current: {
@@ -78,7 +78,7 @@ const classroomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case classroomConstants.CREATE_CLASSROOM_FAIL:
+        case timeslotConstants.CREATE_TIMESLOT_FAIL:
             return {
                 ...state,
                 current: {
@@ -87,17 +87,17 @@ const classroomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case classroomConstants.CREATE_CLASSROOM_SUCCESS:
+        case timeslotConstants.CREATE_TIMESLOT_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Classroom created", type: messageConstants.SUCCESS}
+                    message: {content: "Timeslot created", type: messageConstants.SUCCESS}
                 }
             };
-        case classroomConstants.UPDATE_CLASSROOM_LOADING:
+        case timeslotConstants.UPDATE_TIMESLOT_LOADING:
             return {
                 ...state,
                 current: {
@@ -105,7 +105,7 @@ const classroomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case classroomConstants.UPDATE_CLASSROOM_FAIL:
+        case timeslotConstants.UPDATE_TIMESLOT_FAIL:
             return {
                 ...state,
                 current: {
@@ -114,17 +114,17 @@ const classroomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case classroomConstants.UPDATE_CLASSROOM_SUCCESS:
+        case timeslotConstants.UPDATE_TIMESLOT_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: action.payload,
-                    message: {content: "Classroom updated", type: messageConstants.SUCCESS}
+                    message: {content: "Timeslot updated", type: messageConstants.SUCCESS}
                 }
             };
-        case classroomConstants.DELETE_CLASSROOM_LOADING:
+        case timeslotConstants.DELETE_TIMESLOT_LOADING:
             return {
                 ...state,
                 current: {
@@ -132,7 +132,7 @@ const classroomReducer = (state = defaultState, action) => {
                     loading: true
                 }
             };
-        case classroomConstants.DELETE_CLASSROOM_FAIL:
+        case timeslotConstants.DELETE_TIMESLOT_FAIL:
             return {
                 ...state,
                 current: {
@@ -141,14 +141,14 @@ const classroomReducer = (state = defaultState, action) => {
                     message: {content: action.payload, type: messageConstants.FAIL}
                 }
             };
-        case classroomConstants.DELETE_CLASSROOM_SUCCESS:
+        case timeslotConstants.DELETE_TIMESLOT_SUCCESS:
             return {
                 ...state,
                 current: {
                     ...state.current,
                     loading: false,
                     data: {},
-                    message: {content: "Classroom deleted", type: messageConstants.SUCCESS}
+                    message: {content: "Timeslot deleted", type: messageConstants.SUCCESS}
                 }
             };
         default:
@@ -156,4 +156,4 @@ const classroomReducer = (state = defaultState, action) => {
     }
 };
 
-export default classroomReducer;
+export default timeslotReducers;
