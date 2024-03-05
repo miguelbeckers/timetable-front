@@ -1,5 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import classroomServices from "../../services/classroomServices.ts";
+import classroomServices from "../services/classroomServices.ts";
 import {classroomsActions} from "../slices/classroomSlice.ts";
 import {ClassroomDto} from "../../types/dtos/ClassroomDto.ts";
 
