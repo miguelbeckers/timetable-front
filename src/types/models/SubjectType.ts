@@ -1,4 +1,4 @@
-export interface SubjectDto {
+export interface SubjectType {
     id: number;
     name: string;
     abbreviation: string;

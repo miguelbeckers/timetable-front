@@ -1,4 +1,4 @@
-export interface StudentDto {
+export interface Student {
     id: number;
     subjectCourseIds: number[];
 }

@@ -1,4 +1,4 @@
-export interface LessonUnitDto {
+export interface LessonUnit {
     id: number;
     lessonId: number;
     timeslotId: number;

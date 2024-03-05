@@ -1,4 +1,4 @@
-export interface LessonDto {
+export interface Lesson {
     id: number;
     name: string;
     color: string;

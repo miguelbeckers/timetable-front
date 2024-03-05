@@ -1,4 +1,4 @@
-export interface ResourceDto {
+export interface Period {
     id: number;
     name: string;
     abbreviation: string;
