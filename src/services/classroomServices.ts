@@ -1,6 +1,6 @@
 import http from "../config";
 import {AxiosResponse} from "axios";
-import {ClassroomDto} from "../dtos/ClassroomDto";
+import {ClassroomDto} from "../types/dtos/ClassroomDto";
 
 class ClassroomServices {
     getAllClassrooms(): Promise<AxiosResponse<ClassroomDto[]>> {
